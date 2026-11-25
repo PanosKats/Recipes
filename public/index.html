@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="el" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Οι Συνταγές μου</title>
+  <script src="/recipes/boot.js"></script>
+  <link rel="stylesheet" href="/recipes/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/recipes" id="brand"></a>
+      <div class="controls">
+        <div class="lang-switch" role="group" id="lang-switch">
+          <button type="button" data-lang="en" lang="en">EN</button>
+          <button type="button" data-lang="el" lang="el">ΕΛ</button>
+        </div>
+        <button type="button" class="icon-btn" id="lock-btn" hidden>🔒</button>
+        <button type="button" class="icon-btn" id="theme-toggle"></button>
+      </div>
+    </div>
+  </header>
+  <main id="app" class="page" tabindex="-1"></main>
+  <dialog id="confirm-dialog">
+    <h2 id="confirm-title"></h2>
+    <p id="confirm-text"></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn" id="confirm-cancel"></button>
+      <button type="button" class="btn btn-danger" id="confirm-ok"></button>
+    </div>
+  </dialog>
+  <dialog id="code-dialog">
+    <form id="code-form" novalidate>
+      <h2 id="code-title"></h2>
+      <p id="code-text"></p>
+      <label class="field">
+        <span class="field-label" id="code-label"></span>
+        <input id="code-input" type="password" inputmode="numeric" maxlength="64" autocomplete="off">
+      </label>
+      <p class="error" id="code-error" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn" id="code-cancel"></button>
+        <button type="submit" class="btn btn-primary" id="code-submit"></button>
+      </div>
+    </form>
+  </dialog>
+  <script src="/recipes/i18n.js"></script>
+  <script src="/recipes/app.js"></script>
+</body>
+</html>
